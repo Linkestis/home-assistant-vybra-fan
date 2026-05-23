@@ -57,20 +57,22 @@ Modifying `core.config_entries` directly in the `.storage` folder is highly risk
 ]
 
 
-## 🔍 Known Issues (Wi-Fi Drops)
+🔍 Known Issues (Wi-Fi Drops)
 Like many Tuya devices, the Vybra Tower Fan suffers from unstable or poorly optimized Wi-Fi firmware.
-* **The Issue:** You might occasionally see the device go `unavailable` in Home Assistant or see `receive loop has terminated` warnings in your logs.
-* **The Fix:** This is a firmware issue, not a LocalTuya bug. It is highly recommended to plug the fan into a smart plug and create an automation to power-cycle it if it drops off the network for too long.
 
----
+The Issue: You might occasionally see the device go unavailable in Home Assistant or see receive loop has terminated warnings in your logs.
 
-### ☕ Support my work!
-This mapping took over **15+ hours** of reverse engineering and dozens of Home Assistant restarts to perfect. If this guide saved you from the same frustration, feel free to support my work!
+The Fix: This is a firmware issue, not a LocalTuya bug. It is highly recommended to plug the fan into a smart plug and create an automation to power-cycle it if it drops off the network for too long.
 
-**Every small tip is appreciated!**
-* **Revolut Me:** [revolut.me/mariannud](https://revolut.me/mariannud)
+☕ Support my work!
+This mapping took over 15+ hours of reverse engineering and dozens of Home Assistant restarts to perfect. If this guide saved you from the same frustration, feel free to support my work!
+
+Every small tip is appreciated!
+
+Revolut Me: revolut.me/mariannud
 
 Thank you!
 
+Contributed by: MA-Linkestis (2026)
 ---
 **Contributed by:** MA-Linkestis (2026)
