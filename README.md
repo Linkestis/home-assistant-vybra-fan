@@ -40,8 +40,10 @@ The internal naming of the modes is counter-intuitive. Use these exact strings (
 
 ---
 
-### ⚙️ JSON Configuration Example
-Add this to your `core.config_entries` or via the UI:
+## ⚠️ WARNING: Configuration Risk
+Modifying `core.config_entries` directly in the `.storage` folder is highly risky. A single missing comma or bracket can break your entire Home Assistant setup. **It is strongly recommended to configure the device via the LocalTuya UI.** Only use the JSON below for reference or if you are an advanced user.
+
+## ⚙️ JSON Configuration Example (Advanced)
 ```json
 "entities": [
   {"friendly_name": "Vybra Heater", "id": 103, "platform": "switch"},
@@ -54,6 +56,13 @@ Add this to your `core.config_entries` or via the UI:
   {"friendly_name": "Vybra Temperature", "id": 10, "platform": "sensor", "device_class": "temperature", "unit_of_measurement": "°C"}
 ]
 
+
+🔍 Known Issues (Wi-Fi Drops)
+Like many Tuya devices, the Vybra Tower Fan has a cheap Wi-Fi chip and aggressive power-saving features.
+
+The Issue: You might occasionally see the device go unavailable in Home Assistant or see receive loop has terminated warnings in your logs.
+
+The Fix: This is a hardware/firmware issue, not a LocalTuya bug. It is recommended to plug the fan into a smart plug and create an automation to power-cycle it if it drops off the network for too long.
 ---
 
 ### ☕ Support my work!
