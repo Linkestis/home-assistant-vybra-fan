@@ -1,9 +1,15 @@
 > [!IMPORTANT]
-> **WARNING:** Opening a Tuya Developer Platform account alone won't do the job for you, because the DP labels there are completely scrambled and incorrect. This mapping is the only way to get everything working properly!
+> **WARNING:** Tuya Developer Platform DP labels for the tested device are misleading or swapped. Do not rely on those labels alone; use the verified DP mapping below.
 
 # Vybra Tower Fan - Full LocalTuya Integration Guide (Home Assistant)
 
-After 15+ hours of reverse engineering and trial-and-error, I have successfully mapped all functions of the Vybra Tower Fan for LocalTuya. This device has a very non-standard DP mapping where many labels are swapped or misleading in the Tuya IoT logs.
+This guide documents a LocalTuya DP mapping established through reverse engineering and testing of a Vybra Tower Fan. Some Tuya IoT DP labels for this device are swapped or misleading. The mapping is verified for the specific device tested here; other hardware or firmware variants may differ.
+
+## Prerequisites
+
+* Home Assistant with LocalTuya installed.
+* A Vybra Tower Fan reachable from Home Assistant on the local network (Tuya local port 6668).
+* The device ID and local key for your own device, obtained through an authorized setup method. Do not publish these credentials.
 
 ---
 
@@ -16,7 +22,7 @@ After 15+ hours of reverse engineering and trial-and-error, I have successfully 
 
 ---
 
-# 📊 Verified DP Map (The "Golden" List)
+# 📊 Verified DP Map
 
 | DP ID | Function | Values / Type | Note |
 | :---: | :--- | :--- | :--- |
@@ -44,7 +50,7 @@ If you are configuring the device via the LocalTuya UI, use these exact entity p
 
 ---
 
-# 🌬️ Wind Modes (DP 3) - Crucial Info!
+# 🌬️ Wind Modes (DP 3)
 
 The internal naming of the modes is counter-intuitive. Use these exact strings (lowercase):
 
@@ -125,28 +131,18 @@ Only use the JSON example below for reference or if you are an advanced user.
 
 # 🔍 Known Issues (Wi-Fi Drops)
 
-Like many Tuya devices, the Vybra Tower Fan suffers from unstable or poorly optimized Wi-Fi firmware.
+The tested device has occasionally become unavailable in Home Assistant. The root cause has not been established.
 
-* **The Issue:**  
-  You might occasionally see the device go `unavailable` in Home Assistant or see `receive loop has terminated` warnings in your logs.
+* **Observed behavior:** The device may become `unavailable` in Home Assistant, sometimes with `receive loop has terminated` warnings in the logs.
 
-* **The Fix:**  
-  This is a firmware issue, not a LocalTuya bug. It is highly recommended to plug the fan into a smart plug and create an automation to power-cycle it if it drops off the network for too long.
+* **Possible cause:** The observed Wi-Fi drops appear to originate from the device or network side, but this has not been proven; a LocalTuya issue has not been ruled out.
+* **Recovery:** Check device power and network connectivity first. An automatic smart-plug power-cycle is not a universal fix and should not be used as a safety control. Consider it only with a suitably rated smart plug, only if power-cycling this particular device is safe, and never during heating operation (the fan contains a PTC heater).
 
 ---
 
-# ☕ Support My Work
+# ☕ Support
 
-This mapping took over **15+ hours** of reverse engineering and dozens of Home Assistant restarts to perfect.
-
-If this guide saved you from the same frustration, feel free to support my work.
-
-**Every small tip is appreciated!**
-
-* **Revolut Me:**  
-  `revolut.me/mariannud`
-
-Thank you!
+This mapping is based on direct reverse engineering and testing. Optional support: [Revolut Me](https://revolut.me/mariannud).
 
 ---
 
