@@ -140,10 +140,10 @@ The tested device has occasionally become unavailable in Home Assistant. The roo
 
 ---
 
-# ☕ Support
+## Support
 
-This mapping is based on direct reverse engineering and testing. Optional support: [Revolut Me](https://revolut.me/mariannud).
+This mapping is based on direct reverse engineering and testing.
 
----
+[Support this work on Revolut](https://revolut.me/mariannud)
 
-**Contributed by:** MA-Linkestis (2026)
+Contributed by MA-Linkestis (2026).
